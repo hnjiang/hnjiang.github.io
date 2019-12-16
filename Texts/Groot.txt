@@ -1,0 +1,6 @@
+Groot | Software development | Unity, C#
+
+> 3D tree generator.
+> Using fractal geometry to simulate tree branches.
+> Able to select the number of branches, tree shape, number of leaves / flowers and curve of the branch.
+> Able to export tree models to file.

@@ -1,0 +1,6 @@
+Follow my voice | Gameplay development | Unity, C#
+
+* Course project (team of 2): [Game Design and Development]
+> 3D first person horror game. 
+> Player wakes up in an abandoned school, collect clues to try to escape.
+> Inventory system. A* path finding.

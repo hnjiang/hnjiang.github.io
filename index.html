@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <title>Project blog</title>
     <style type="text/css">
-        body {
-            background-color: #ffffff
-        }
         p {
             margin-left: 20px
         }
         .info_single {
-            background-color: #ffffff;
-            width: 80%;
+            background-color: #eeeeee;
+            width: 70%;
             height: 800px;
-            border:1px solid #fffbf4;
+            border:1px solid #eeeeee;
             margin: auto;
         }
         .pages {
@@ -24,425 +21,140 @@
         .pageInit {
             height: 120px;
             width: 100%;
-            padding-top: 35px
+            /* padding-top: 35px */
+        }
+        .beginline {
+            height: 400px;
+            width: 100%;
+            padding-top: 35px;
+            overflow-y: scroll;
+        }
+        .defborder {
+            height: 50px;
+            width: 100%;
+        }
+        .columnPic {
+            float: left;
+            width: 40%;
+            height: 200px;
+        }
+        .columnText {
+            overflow-wrap: break-word;
+            float: left;
+            width: 60%;
+            height: 200px;
+            
+        }
+        .row {
+            float: center;
+            width: 70%;
+            height: 200px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .imgIcon {
+            display: block;
+            max-width:600px;
+            max-height:200px;
+            width: auto;
+            height: auto;
         }
     </style>
 </head>
+
 <body>
 
-<div>
-    <!-- page 1 -->
-    <div class="pageInit" style="background-color: #eeeeee; height: 400px;" align="center;" >
-        <div align="center" class="info_single">
-            <p style="line-height: 25px; font-size:24px; font-weight: bold" align="left">
-                DH2323 Project &nbsp :: &nbsp Fractor Tree Generator
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                <a href="Groot/jump.html" style="line-height: 25px; font-size:18px">Play</a>
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                <a href="video.html" style="line-height: 25px; font-size:18px">See Video</a>
-            </p>
-            <p style="line-height: 20px; font-size:18px; font-weight: bold" align="left">
-                Team member:  &nbsp Huinan Jiang, &nbsp Xiaotong Shi, &nbsp Cuiwei Xu
-            </p>
-            <img align="center" src="protfolio_images/DemoStagex.jpg" style="width:420px; height:250px">
-            <img align="center" src="protfolio_images/demoTERRAIN.jpg" style="width:420px; height:250px">
+    <div>
+        <div style="background-color: #eeeeee;height:100;width:100%">
+            <img align="center" src="Resources/bg.jpg" style="height:100%;width:100%">
         </div>
-    </div>
-    <div class="pages" style="background-color: #eeeeee; height: 270px;" align="center" >
-        <div align="center" class="info_single">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                28 April, 2018
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                <b>What to do:</b> In game industry, the simulation of natural environment such as trees has been a challenging task.
-                In many games, developers want their trees to look as natural as possible but at the same time won’t
-                affect general rendering performance.
-                Our group has decided to try building 3D trees based on <a href="https://en.wikipedia.org/wiki/Fractal"> fractal geometry</a>.
-                We would like to make a tree generator that allows users to chose the tree type, leaf, flower and branch density, etc.
-                Our tree generator can be easily accessed through the Internet, so we considered using ThreeJS, which is based on OpenGL library.
-                The main difficulty would be: tree structure development (getting all the angles and position of branches correctly),
-                to model and render the branches well, and to successfully export it as a .obj or other sources of model file.
-                We founded a few papers about tree simulation using L-system ( a method for generating fractals ).
-                The official documentation for ThreeJS could also be helpful.
-            </p>
-        </div>
-    </div>
-    <!-- page 2 -->
-    <div class="pages" style="background-color: #eeeeee; height: 360px;" align="center" >
-        <div align="center" class="info_single">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                3 May, 2018
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:60%; width:100%">
-                <b>Initial version with WebGL:</b> We started working on it with JavaScript. This was new to some of us, but it was pretty easy to learn.
-                The basic tree structure was not hard to understand, we did have some trouble setting the 3D coordinates correct.
-                The idea is to use a recursive function, each time we build a branch originated from a certain point,
-                we set two (or even more, in the future) new points within this branch as new starter points,
-                and recursively call the BuildBranch() function. Initially there was one branch, after first recursion, there would be
-                3 in total ( = 1 + 2), and after second recursion, there would be 7 ( = 1 + 2 + 4) branches, etc.
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:40%; width:100%">
-                We had one problem when trying to calculate the origin points on sub-branches.
-                We managed to solve this by adding 'helpers', which can also be seen as leaves, to the end point of a branch.
-                Therefore when we move and rotate a branch, we move the helper along with it, since the helper is mere a point,
-                it doesn't have complex shapes as the branch does, it would be much easier to obtain the coordinates.
-                Eventually, everything seems to work well. Our next step was to improve the tree structure and add even more branches to it.
-            </p>
-        </div>
-    </div>
-    <!-- page 2 -->
-    <div class="pages" style="background-color: #eeeeee; height: 200px;" align="center" >
-        <div align="center" class="info_single">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                7 May, 2018
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                <b>Feedback -- from ThreeJS to Unity3D:</b> We recently received feedback about our project specification from Prof. Peters.
-                Instead of using ThreeJS and develop a web application, he suggested us developing it inside Unity.
-                We discussed about it, and thought it's a good idea.
-                With Unity, our tree generator could be easily put into applications in games.
-                Therefore, we moved what we've developed in JavaScript to C# in Unity. Our initial task was to build a 2D tree to have a look.
-                Then we moved on to 3D fractal trees, which eventually works well.
-            </p>
-        </div>
-    </div>
-    <!-- page 3 -->
-    <div class="pages" style="background-color: #eeeeee;height: 730px;" align="center" >
-        <div align="center" class="info_single" style="height:730px">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                15 May, 2018
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                <b>Branch simulation:</b> In order to make our tree branch look natural,
-                we changed our initial cylinder shape branch into customized Unity mesh.
-                With the new mesh we have, we could reshape (to twist) the branch so that they look real.
-                In order to easily control all the mesh shapes, we built our branch model inside Unity using <a href="https://docs.unity3d.com/ScriptReference/Mesh.html"> Mesh</a>.
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                Here is how we sharpen and twist our branch:
-            </p>
-            <img src="protfolio_images/Sharpen.png" style="width:230px; height:150px">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            <img src="protfolio_images/twist.png" style="width:230px; height:155px">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            <img src="protfolio_images/tree-branch.jpg" style="width:230px; height:155px">
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                <b>Adding Flowers and Leaves:</b> Flowers and leaves are loaded from Assets/Resources, there are prefab format.
-                The simple leaf and flower we use in our project is a plane mesh with specific material. Later we tried complex meshes such as follows:
-            </p>
-            <img src="protfolio_images/Picture1.png" style="width:600px; height:260px">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-        </div>
-    </div>
-    <div class="pages" style="background-color: #eeeeee;height: 450px;" align="center" >
-        <div align="center" class="info_single" style="height:430px">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                17 May, 2018
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                <b>Adding UI:</b>
-            </p>
-            <img src="protfolio_images/DemoStagex.jpg" style="width:500px; height:300px">
-        </div>
-    </div>
-    <div class="pages" style="background-color: #eeeeee;height: 450px;" align="center" >
-        <div align="center" class="info_single" style="height:430px">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                20 May, 2018
-            </p>
-            <p style="line-height:24px; font-size: 18px; padding-right:18px" align="justify" style="height:100%; width:100%">
-                <b>Finishing Demo Scene:</b>
-            </p>
-            <img src="protfolio_images/Demo.jpg" style="width:500px; height:300px">
-        </div>
-    </div>
-    <div class="pages" style="background-color: #eeeeee;height: 250px;" align="center" >
-        <div align="left" class="info_single" style="height:200px;">
-            <p style="line-height:20px; font-size: 18px" align="left" style="height:100%; width:100%">
-                Useful Links:
-            </p>
-            <p><a style="padding-left:50px" href="https://ericeastwood.com/blog/20/texture-tiling-based-on-object-sizescale-in-unity">Texture Tiling based on object Size/Scale in Unity</a></p>
-            <p><a style="padding-left:50px" href="https://catlikecoding.com/unity/tutorials/procedural-grid/">Procedural Grid</a></p>
-            <p><a style="padding-left:50px" href="http://www.fractal.org/Bewustzijns-Besturings-Model/Fractals-Useful-Beauty.htm">Introduction to fractal geometry</a></p>
-            <p><a style="padding-left:50px" href="https://store.speedtree.com/">SpeedTree in video games</a></p>
-        </div>
-    </div>
-</div>
-<script>
-</script>
-
-
-</body>
-</html> 
- BIN +4.16 MB Groot/Build/Groot.asm.code.unityweb 
-Binary file not shown.
- BIN +88.5 KB Groot/Build/Groot.asm.framework.unityweb 
-Binary file not shown.
- BIN +355 KB Groot/Build/Groot.asm.memory.unityweb 
-Binary file not shown.
- BIN +15.4 MB Groot/Build/Groot.data.unityweb 
-Binary file not shown.
- 13  Groot/Build/Groot.json 
-@@ -0,0 +1,13 @@
-{
-"companyName": "DefaultCompany2",
-"productName": "TreeGenerator",
-"dataUrl": "Groot.data.unityweb",
-"asmCodeUrl": "Groot.asm.code.unityweb",
-"asmMemoryUrl": "Groot.asm.memory.unityweb",
-"asmFrameworkUrl": "Groot.asm.framework.unityweb",
-"TOTAL_MEMORY": 268435456,
-"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
-"webglContextAttributes": {"preserveDrawingBuffer": false},
-"splashScreenStyle": "Dark",
-"backgroundColor": "#231F20"
-} 
- 4  Groot/Build/UnityLoader.js 
-Large diffs are not rendered by default.
-
- 24  Groot/TemplateData/UnityProgress.js 
-@@ -0,0 +1,24 @@
-function UnityProgress(gameInstance, progress) {
-  if (!gameInstance.Module)
-    return;
-  if (!gameInstance.logo) {
-    gameInstance.logo = document.createElement("div");
-    gameInstance.logo.className = "logo " + gameInstance.Module.splashScreenStyle;
-    gameInstance.container.appendChild(gameInstance.logo);
-  }
-  if (!gameInstance.progress) {    
-    gameInstance.progress = document.createElement("div");
-    gameInstance.progress.className = "progress " + gameInstance.Module.splashScreenStyle;
-    gameInstance.progress.empty = document.createElement("div");
-    gameInstance.progress.empty.className = "empty";
-    gameInstance.progress.appendChild(gameInstance.progress.empty);
-    gameInstance.progress.full = document.createElement("div");
-    gameInstance.progress.full.className = "full";
-    gameInstance.progress.appendChild(gameInstance.progress.full);
-    gameInstance.container.appendChild(gameInstance.progress);
-  }
-  gameInstance.progress.full.style.width = (100 * progress) + "%";
-  gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
-  if (progress == 1)
-    gameInstance.logo.style.display = gameInstance.progress.style.display = "none";
-} 
- BIN +13 KB Groot/TemplateData/favicon.ico 
-Binary file not shown.
- BIN +345 Bytes Groot/TemplateData/fullscreen.png 
-Binary file not shown.
- BIN +155 Bytes Groot/TemplateData/progressEmpty.Dark.png 
-Binary file not shown.
- BIN +159 Bytes Groot/TemplateData/progressEmpty.Light.png 
-Binary file not shown.
- BIN +137 Bytes Groot/TemplateData/progressFull.Dark.png 
-Binary file not shown.
- BIN +142 Bytes Groot/TemplateData/progressFull.Light.png 
-Binary file not shown.
- BIN +2.29 KB Groot/TemplateData/progressLogo.Dark.png 
-Binary file not shown.
- BIN +2.21 KB Groot/TemplateData/progressLogo.Light.png 
-Binary file not shown.
- 18  Groot/TemplateData/style.css 
-@@ -0,0 +1,18 @@
-.webgl-content * {border: 0; margin: 0; padding: 0}
-.webgl-content {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
-
-.webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
-.webgl-content .logo {background: url('progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
-.webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
-.webgl-content .progress .empty {background: url('progressEmpty.Light.png') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
-.webgl-content .progress .full {background: url('progressFull.Light.png') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
-
-.webgl-content .logo.Dark {background-image: url('progressLogo.Dark.png');}
-.webgl-content .progress.Dark .empty {background-image: url('progressEmpty.Dark.png');}
-.webgl-content .progress.Dark .full {background-image: url('progressFull.Dark.png');}
-
-.webgl-content .footer {margin-top: 5px; height: 38px; line-height: 38px; font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 18px;} 
-.webgl-content .footer .webgl-logo, .title, .fullscreen {height: 100%; display: inline-block; background: transparent center no-repeat;} 
-.webgl-content .footer .webgl-logo {background-image: url('webgl-logo.png'); width: 204px; float: left;}
-.webgl-content .footer .title {margin-right: 10px; float: right;}
-.webgl-content .footer .fullscreen {background-image: url('fullscreen.png'); width: 38px; float: right;} 
- BIN +3.5 KB Groot/TemplateData/webgl-logo.png 
-Binary file not shown.
- 25  Groot/index.html 
-@@ -0,0 +1,25 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | TreeGenerator</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Groot.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 1280px; height: 720px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">TreeGenerator</div>
-      </div>
-    </div>
-  </body>
-</html> 
- 22  Groot/jump.html 
-@@ -0,0 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Warning</title>
-</head>
-<body>
-<div style="background-color: #eeeeee00;" align="center;" >
-<div align="center" style="height: 70px">
-    <p style="line-height: 25px; font-size:24px; color: #5c5659; font-weight: bold" align="left">
-        There might be some resolution issue with different browser / monitor.
-    </p>
-    <p style="line-height: 25px; font-size:24px; color: #5c5659; font-weight: bold" align="left">
-        If it doesn't work well, please view our video.
-    </p>
-    <a href="../DH2323ProjectBlog.html">Back</a>
-    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-    <a href="index.html">Continue to WebGL Player</a>
-</div>
-</div>
-</body>
-</html> 
- 54  index.html 
-@@ -5,54 +5,56 @@
-    <title>Test</title>
-    <style type="text/css">
-        body {
-            background-color: red
-            background-color: #ffffff
-        }
-        p {
-            margin-left: 20px
-        }
-        .info_single {
-            background-color: #bcb0ff;
-            width: 600px;
-            height: 350px;
-            border:1px solid #008800;
-            background-color: #eeeeee99;
-            width: 80%;
-            height: 55px;
-            border:1px solid #fffbf477;
-            margin: auto;
-        }
-        .pages {
-            height: 800px;
-            width: 100%;
-            padding-top: 150px
-            padding-top: 25px;
-        }
-        .pageInit {
-            width: 100%;
-            padding-top: 25px
-        }
-    </style>
-</head>
-<body>
-
-<div>
-<div style="background-color: white; background-size: 100%;height:660px;background-repeat: no-repeat;">
-    <!-- page 1 -->
-    <div class="pages" style="background-color: cyan;" align="center" >
-        <div align="center" class="info_single">
-            <h style="line-height:350px; font-size: 25px">Our product is blahblahblah</h>
-        </div>
-    </div>
-    <!-- page 2 -->
-    <div class="pages" style="background-color: blue">
-        <div align="center" class="info_single">
-            <div>
-                <img src="test.png" style="width: 50%; height: 50%;">
+        <div class="pageInit" style="background-color: #eeeeee; height: 150px;" align="center;" >
+                <div align="center" class="info_single">
+                    <p style="line-height: 25px; font-size:24px; font-weight: bold" align="left">
+                        Huinan Jiang
+                    </p>
+                    <p style="line-height: 20px; font-size:18px; font-weight: normal" align="left">
+                            Here are some of my projects :)
+                    </p>
+                </div>
             </div>
-    <div class="pageInit" style="background-color: #eeeeee00;" align="center;" >
-        <div align="center" class="info_single" style="height: 70px">
-            <p style="line-height: 25px; font-size:24px; font-weight: bold" align="left">
-
-            </p>
+        <!-- page 1 -->
+        <div align="center" style="background-color:#eee;">
+            <div class="row" align="center" style="background-color:#eee;">
+                <div class="columnPic" style="background-color:#aaa;" align="center">
+                    <img class="imgIcon" align="center" src="Resources/Rubiks_04.png" style="width:100%; height:100%">
+                </div>
+                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
+                    <object width="100%" height="70%" type="text/plain" data="Texts/Rubiks.txt" ></object>
+                    <p></p>
+                    &nbsp&nbsp<input type="button" value="Gallary" style="color: rgb(0, 161, 161);" onclick="window.open('gallary_Rubiks.html')">
+                </div>
+            </div>
+        </div>
+        <div class="defborder" align="center" style="background-color:#eee;"></div>
+        <div align="center" style="background-color:#eee;">
+            <div class="row" align="center" style="background-color:#eee;">
+                <div class="columnPic" style="background-color:#aaa;" align="center">
+                    <img class="imgIcon" align="center" src="Resources/Hotpipe_01.png" style="width:100%; height:100%">
+                </div>
+                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
+                    <object width="100%" height="70%" type="text/plain" data="Texts/Hotpipe.txt" ></object>
+                    <p></p>
+                    &nbsp&nbsp<input type="button" value="Play" style="color: rgb(0, 161, 161);" onclick="window.open('http://hotpipe.itch.io/hotpipe')">
+                    &nbsp&nbsp<input type="button" value="Publication" style="color: rgb(0, 161, 161);" onclick="window.open('https://link.springer.com/chapter/10.1007/978-3-030-34350-7_30')">
+                </div>
+            </div>
+        </div>
+        <div class="defborder" align="center" style="background-color:#eee;"></div>
+        <div align="center" style="background-color:#eee;">
+            <div class="row" align="center" style="background-color:#eee;">
+                <div class="columnPic" style="background-color:#aaa;" align="center">
+                        <img class="imgIcon" align="center" src="Resources/Billiard.png" style="width:100%; height:100%">
+                </div>
+                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
+                        <object width="100%" height="70%" type="text/plain" data="Texts/Billiard.txt" ></object>
+                    </div>
+            </div>
+        </div>
+        <div class="defborder" align="center" style="background-color:#eee;"></div>
+        <div align="center" style="background-color:#eee;">
+            <div class="row" align="center" style="background-color:#eee;">
+                <div class="columnPic" style="background-color:#aaa;" align="center">
+                    <img class="imgIcon" align="center" src="Resources/TreeSimulator.png" style="width:100%; height:100%">
+                </div>
+                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
+                    <object width="100%" height="70%" type="text/plain" data="Texts/Groot.txt" ></object>
+                    <p></p>
+                    &nbsp&nbsp<input type="button" value="Video" style="color: rgb(0, 161, 161);" onclick="window.open('video.html')">
+                </div>
+            </div>
+        </div>
+        <div class="defborder" align="center" style="background-color:#eee;"></div>
+        <div align="center" style="background-color:#eee;">
+            <div class="row" align="center" style="background-color:#eee;">
+                <div class="columnPic" style="background-color:#aaa;" align="center">
+                    <img class="imgIcon" align="center" src="Resources/FollowMyVoice.png" style="width:100%; height:100%">
+                </div>
+                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
+                        <object width="100%" height="70%" type="text/plain" data="Texts/Followmyvoice.txt" ></object>
+                </div>
+            </div>
+        </div>
+        <div class="defborder" align="center" style="background-color:#eee;"></div>
+        <div align="center" style="background-color:#eee;">
+            <div class="row" align="center" style="background-color:#ccc;">
+                <div class="columnPic" style="background-color:#aaa;" align="center">
+                    <img class="imgIcon" align="center" src="Resources/Bulb.png" style="width:100%; height:100%">
+                </div>
+                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
+                        <object width="100%" height="70%" type="text/plain" data="Texts/Bulb.txt" ></object>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- page 3 -->
-    <div class="pages" style="background-color: pink">
-    <div class="pages" style="background-color: #eeeeee00; height: 150px;" align="center" >
-        <div align="center" class="info_single">
-            <h style="line-height:350px; font-size: 25px">Enter your email here:</h>
-            <input type="text">
-            <button>Submit</button>
-            <p style="line-height:20px; font-size: 18px;" align="left" style="height:100%; width:100%">
-                <b>Course Project for DH2323</b>
-                &nbsp &nbsp &nbsp <a href="DH2323ProjectBlog.html">Project Blog</a>
-                &nbsp &nbsp &nbsp <a href="video.html">Video Demo</a>
-            </p>
-            <p style="line-height:20px; font-size: 18px;" align="left" style="height:100%; width:100%">
-
-            </p>
-            <p style="line-height:20px; font-size: 18px;" align="left" style="height:100%; width:100%">
-
-            </p>
-        </div>
-        <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=hj3306.github.io/jianghuinan.github.io/&digit=style/plain/1/&reloads=0" alt="" title="" border="0"></a><br /><a href="http://garmin-forerunner.com/review/garmin-forerunner-230" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">garmin 230</a>
-    </div>
-
-</div>
-
-<script>
- BIN +8 KB protfolio_images/.DS_Store 
-Binary file not shown.
- BIN +307 KB protfolio_images/Demo.jpg 
-Binary file not shown.
- BIN +101 KB protfolio_images/DemoStagex.jpg 
-Binary file not shown.
- BIN +323 KB protfolio_images/Picture1.png 
-Binary file not shown.
- BIN +10.5 KB protfolio_images/Sharpen.png 
-Binary file not shown.
- BIN +157 KB protfolio_images/demoTERRAIN.jpg 
-Binary file not shown.
- BIN +372 KB protfolio_images/leaf.png 
-Binary file not shown.
- BIN +327 KB protfolio_images/leaf02.png 
-Binary file not shown.
- BIN +6 KB protfolio_images/main/.DS_Store 
-Binary file not shown.
- BIN +159 KB protfolio_images/main/bg.jpg 
-Binary file not shown.
- BIN +36.2 KB protfolio_images/tree-branch.jpg 
-Binary file not shown.
- BIN +63.6 KB protfolio_images/tree-yellow.jpg 
-Binary file not shown.
- BIN +41.8 KB protfolio_images/twist.png 
-Binary file not shown.
- BIN -369 KB test.png 
-Binary file not shown.
- 22  video.html 
-@@ -0,0 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Video</title>
-</head>
-<body>
-<div style="background-color: #000000; background-size: 100%;height:660px;background-repeat: no-repeat;">
-    <!-- page 1 -->
-    <div class="pageInit" style="background-color: #000000;" align="center;" >
-        <div align="center" class="info_single" style="height: 70px">
-            <p>&nbsp</p>
-            <p style="line-height: 25px; font-size:24px; font-weight: bold" align="left">
-                &nbsp &nbsp
-                <a href="DH2323ProjectBlog.html" style="line-height: 25px; font-size:18px; color: #fff;">BACK</a>
-            </p>
-            <video src="videoDemo.mov" poster="protfolio_images/DemoStagex.jpg" width="500px" height="350px" controls preload></video>
-        </div>
-    </div>
-</div>
 </body>
 </html> 

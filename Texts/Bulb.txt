@@ -1,0 +1,5 @@
+Light! | Gameplay & UI development | Java, Android dev
+
+* A 24 hour Google Hackathon project (team of 4).
+> 2D mobile puzzle game.
+> Each light source changes colour and shape with time. Player memorize and recreate the patterns within limited time.

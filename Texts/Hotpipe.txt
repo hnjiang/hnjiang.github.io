@@ -1,0 +1,7 @@
+Hotpipe | Gameplay development | Unity, c#
+
+> 2D puzzle game.
+> A serious game for teaching geothermal energy basics through gameplay and narratives.
+> Player drills to reach sandstone layer.
+> Different rock types affect drill speed -> game mechanics: 1 tile per drill, 2 tiles per drill or un-drillable.
+> Form the water circulation system in the end.

@@ -1,0 +1,6 @@
+Magic Billiard | Gameplay development | C++, OpenGL, QT
+
+* Course project (individual): [Computer Graphics].
+> 3D billiard game with extended features.
+> Basic billiard game feature + auto-moving magical balls.
+> Implemented basic particle system, spring-mass system for fabric simulation, and game physics using OpenGL. QT for UI.

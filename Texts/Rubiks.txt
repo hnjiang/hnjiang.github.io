@@ -1,0 +1,5 @@
+Rubiks | Gameplay & UI development | Unity, c#
+
+> 3D mobile puzzle game.
+> Player rotates the cube and controls the character to find correct path and walk towards the final destination. In total there are 10 levels with different scenes and game mechanics.
+> Huawei Hi-Dream Cup 2017 innovation award winner.
