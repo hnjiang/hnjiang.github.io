@@ -24,7 +24,7 @@
             /* padding-top: 35px */
         }
         .beginline {
-            height: 400px;
+            height: 200;
             width: 100%;
             padding-top: 35px;
             overflow-y: scroll;
@@ -37,6 +37,7 @@
             float: left;
             width: 40%;
             height: 200px;
+            position: relative;
         }
         .columnText {
             overflow-wrap: break-word;
@@ -63,6 +64,22 @@
             width: auto;
             height: auto;
         }
+        .columnPic:hover .imgIconOverlay {
+            opacity: 1;
+        }
+
+        .imgIconOverlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #008CBA;
+        }
     </style>
 </head>
 
@@ -75,18 +92,21 @@
         <div class="pageInit" style="background-color: #eeeeee; height: 150px;" align="center;" >
                 <div align="center" class="info_single">
                     <p style="line-height: 25px; font-size:24px; font-weight: bold" align="left">
-                        Huinan Jiang
+                        ~o~
                     </p>
                     <p style="line-height: 20px; font-size:18px; font-weight: normal" align="left">
-                            Here are some of my projects :)
+                            TBC
                     </p>
                 </div>
             </div>
         <!-- page 1 -->
         <div align="center" style="background-color:#eee;">
             <div class="row" align="center" style="background-color:#eee;">
-                <div class="columnPic" style="background-color:#aaa;" align="center">
-                    <img class="imgIcon" align="center" src="Resources/Rubiks_04.png" style="width:100%; height:100%">
+                <div class="columnPic" style="background-color:#eee;" align="center">
+                    <img class="imgIcon" align="center" alt="Avatar" src="Resources/Rubiks_04.png" style="width:100%; height:100%">
+                    <div class="imgIconOverlay">
+                        <img class="imgIcon" align="center" alt="Avatar" src="Resources/Rubiks_level.jpg" style="width:100%; height:100%">
+                    </div>
                 </div>
                 <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
                     <object width="100%" height="70%" type="text/plain" data="Texts/Rubiks.txt" ></object>
@@ -96,65 +116,7 @@
             </div>
         </div>
         <div class="defborder" align="center" style="background-color:#eee;"></div>
-        <div align="center" style="background-color:#eee;">
-            <div class="row" align="center" style="background-color:#eee;">
-                <div class="columnPic" style="background-color:#aaa;" align="center">
-                    <img class="imgIcon" align="center" src="Resources/Hotpipe_01.png" style="width:100%; height:100%">
-                </div>
-                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
-                    <object width="100%" height="70%" type="text/plain" data="Texts/Hotpipe.txt" ></object>
-                    <p></p>
-                    &nbsp&nbsp<input type="button" value="Play" style="color: rgb(0, 161, 161);" onclick="window.open('http://hotpipe.itch.io/hotpipe')">
-                    &nbsp&nbsp<input type="button" value="Publication" style="color: rgb(0, 161, 161);" onclick="window.open('https://link.springer.com/chapter/10.1007/978-3-030-34350-7_30')">
-                </div>
-            </div>
-        </div>
-        <div class="defborder" align="center" style="background-color:#eee;"></div>
-        <div align="center" style="background-color:#eee;">
-            <div class="row" align="center" style="background-color:#eee;">
-                <div class="columnPic" style="background-color:#aaa;" align="center">
-                        <img class="imgIcon" align="center" src="Resources/Billiard.png" style="width:100%; height:100%">
-                </div>
-                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
-                        <object width="100%" height="70%" type="text/plain" data="Texts/Billiard.txt" ></object>
-                    </div>
-            </div>
-        </div>
-        <div class="defborder" align="center" style="background-color:#eee;"></div>
-        <div align="center" style="background-color:#eee;">
-            <div class="row" align="center" style="background-color:#eee;">
-                <div class="columnPic" style="background-color:#aaa;" align="center">
-                    <img class="imgIcon" align="center" src="Resources/TreeSimulator.png" style="width:100%; height:100%">
-                </div>
-                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
-                    <object width="100%" height="70%" type="text/plain" data="Texts/Groot.txt" ></object>
-                    <p></p>
-                    &nbsp&nbsp<input type="button" value="Video" style="color: rgb(0, 161, 161);" onclick="window.open('video.html')">
-                </div>
-            </div>
-        </div>
-        <div class="defborder" align="center" style="background-color:#eee;"></div>
-        <div align="center" style="background-color:#eee;">
-            <div class="row" align="center" style="background-color:#eee;">
-                <div class="columnPic" style="background-color:#aaa;" align="center">
-                    <img class="imgIcon" align="center" src="Resources/FollowMyVoice.png" style="width:100%; height:100%">
-                </div>
-                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
-                        <object width="100%" height="70%" type="text/plain" data="Texts/Followmyvoice.txt" ></object>
-                </div>
-            </div>
-        </div>
-        <div class="defborder" align="center" style="background-color:#eee;"></div>
-        <div align="center" style="background-color:#eee;">
-            <div class="row" align="center" style="background-color:#ccc;">
-                <div class="columnPic" style="background-color:#aaa;" align="center">
-                    <img class="imgIcon" align="center" src="Resources/Bulb.png" style="width:100%; height:100%">
-                </div>
-                <div class="columnText" style="background-color:#f8f8f8;" align="left" white-space: normal;>
-                        <object width="100%" height="70%" type="text/plain" data="Texts/Bulb.txt" ></object>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </body>
 </html> 
